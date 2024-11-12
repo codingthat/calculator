@@ -3,7 +3,7 @@
 
 A simple, responsive calculator built using HTML, CSS, and JavaScript. This project replicates the UI design of a basic calculator with essential operations and is optimized for both mobile and desktop views.
 
-![Calculator Preview](preview-image.png)
+![Calculator Preview](Screenshot (44).png)
 
 ## Features
 
