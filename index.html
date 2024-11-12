@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+        }
+        .calculator {
+            width: 320px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .display {
+            background-color: #e0e6f9;
+            padding: 20px;
+            font-size: 2em;
+            text-align: right;
+            color: #333;
+            height: 80px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-size: 1.5em;
+            border-radius: 50%;
+            background-color: #e0e6f9;
+            color: #333;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.3s;
+        }
+        .button.operation {
+            background-color: #a2c7f8;
+            color: #fff;
+        }
+        .button.clear {
+            background-color: #b6e3d4;
+            color: #333;
+        }
+        .button.equal {
+            grid-column: span 2;
+            background-color: #c9d7f8;
+            color: #333;
+        }
+        .button:hover {
+            background-color: #d8e1f5;
+        }
+        .button.operation:hover {
+            background-color: #8fbaf7;
+        }
+        .button.clear:hover {
+            background-color: #a7dacb;
+        }
+        .button.equal:hover {
+            background-color: #b8cbf8;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 400px) {
+            .calculator {
+                width: 90%;
+            }
+            .display {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <div class="button clear" onclick="clearDisplay()">AC</div>
+            <div class="button" onclick="appendToDisplay('(')">(</div>
+            <div class="button" onclick="appendToDisplay(')')">)</div>
+            <div class="button operation" onclick="appendToDisplay('/')">÷</div>
+
+            <div class="button" onclick="appendToDisplay('7')">7</div>
+            <div class="button" onclick="appendToDisplay('8')">8</div>
+            <div class="button" onclick="appendToDisplay('9')">9</div>
+            <div class="button operation" onclick="appendToDisplay('*')">×</div>
+
+            <div class="button" onclick="appendToDisplay('4')">4</div>
+            <div class="button" onclick="appendToDisplay('5')">5</div>
+            <div class="button" onclick="appendToDisplay('6')">6</div>
+            <div class="button operation" onclick="appendToDisplay('-')">−</div>
+
+            <div class="button" onclick="appendToDisplay('1')">1</div>
+            <div class="button" onclick="appendToDisplay('2')">2</div>
+            <div class="button" onclick="appendToDisplay('3')">3</div>
+            <div class="button operation" onclick="appendToDisplay('+')">+</div>
+
+            <div class="button" onclick="appendToDisplay('0')">0</div>
+            <div class="button" onclick="appendToDisplay('.')">.</div>
+            <div class="button equal" onclick="calculateResult()">=</div>
+        </div>
+    </div>
+
+    <script>
+        let displayElement = document.getElementById('display');
+
+        function clearDisplay() {
+            displayElement.textContent = '0';
+        }
+
+        function appendToDisplay(value) {
+            if (displayElement.textContent === '0') {
+                displayElement.textContent = value;
+            } else {
+                displayElement.textContent += value;
+            }
+        }
+
+        function calculateResult() {
+            try {
+                displayElement.textContent = eval(displayElement.textContent.replace('÷', '/').replace('×', '*'));
+            } catch {
+                displayElement.textContent = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
