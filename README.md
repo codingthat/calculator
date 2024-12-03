@@ -3,7 +3,7 @@
 
 A simple, responsive calculator built using HTML, CSS, and JavaScript. This project replicates the UI design of a basic calculator with essential operations and is optimized for both mobile and desktop views.
 
-![Calculator Preview](Screenshot-(44).png)
+![Calculator Preview](Screenshot.png)
 
 ## Features
 
@@ -68,4 +68,5 @@ Feel free to contribute to this project. Pull requests are welcome. For major ch
 This project is open-source and available under the [MIT License](LICENSE).
 
 
-**Author:** Arun Kumar ([GitHub Profile](https://github.com/savagearun))
+- **Original Author:** Arun Kumar ([GitHub Profile](https://github.com/savagearun))
+- **This Fork's Contributors:** Kevin Bloch ([@codingthat](https://github.com/codingthat))
