@@ -12,9 +12,9 @@ A simple, responsive calculator built using HTML, CSS, and JavaScript. This proj
 - Clear, minimalistic UI
 - Light blue theme similar to standard calculator applications
 
-## Preview
+## No Installation Required
 
-![Calculator GIF](demo.gif) <!-- Add a demo GIF if possible -->
+Just [use it](https://codingthat.github.io/calculator/) on your phone's web browser.
 
 ## Technologies Used
 
